@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --port=4500",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
@@ -14,11 +14,15 @@
     "@angular/common": "^17.3.0",
     "@angular/compiler": "^17.3.0",
     "@angular/core": "^17.3.0",
+    "@angular/elements": "^17.3.12",
     "@angular/forms": "^17.3.0",
     "@angular/platform-browser": "^17.3.0",
     "@angular/platform-browser-dynamic": "^17.3.0",
     "@angular/router": "^17.3.0",
+    "@interopio/workspaces-ui-web-components": "file://./packages/interopio-workspaces-ui-web-components-0.0.2.tgz",
+    "lit-element": "^4.1.0",
     "rxjs": "~7.8.0",
+    "sass": "^1.79.3",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"
   },
