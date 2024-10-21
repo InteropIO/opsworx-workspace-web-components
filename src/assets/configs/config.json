@@ -1,0 +1,326 @@
+{
+  "licenseKey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmF0aW9uIjoxNzI2MzQ3NjAwLCJ0eXBlIjoicGFpZCIsInByb2plY3QgbGVhZCI6Im1hbm9qLnJlZGR5LnBhbGxlQGZtci5jb20ifQ.XWVsLuKAHya4h1QaBpo6mhU-zF0SGDnOESMO-OsmuYw",
+  "workspaces": {
+    "src": "/",
+    "isFrame": true
+  },
+  "layouts": {
+    "mode": "idb",
+    "local": []
+  },
+  "applications": {
+    "local": [
+      {
+        "name": "custom-popup",
+        "title": "Custom Popup",
+        "caption": "Custom Popup",
+        "type": "window",
+        "hidden": true,
+        "allowMultiple": false,
+        "autoStart": true,
+        "details": {
+          "url": "http://localhost:3005/popup.html",
+          "hidden": true,
+          "hideTabHeader": true,
+          "showTitleBar": false,
+          "hasMoveAreas": false,
+          "hasSizeAreas": false,
+          "isSticky": false,
+          "autoSnap": false,
+          "allowMinimize": false,
+          "allowMaximize": false,
+          "allowClose": false,
+          "width": 400,
+          "height": 300,
+          "mode": "html",
+          "startLocation": "center"
+        }
+      },
+      {
+        "name": "investing-stocks",
+        "title": "Investing Stocks",
+        "caption": "Investing Stocks",
+        "type": "window",
+        "ignoreSavedLayout": true,
+        "details": {
+          "url": "https://www.investing.com/charts/stocks-charts",
+          "mode": "flat",
+          "startLocation": "center",
+          "width": 1086,
+          "height": 660,
+          "minWidth": 1086,
+          "minHeight": 630
+        },
+        "customProperties": {
+          "includeInWorkspaces": true
+        }
+      },
+      {
+        "name": "trading-view-stocks",
+        "title": "Trading View Stocks",
+        "caption": "Trading View Stocks",
+        "type": "window",
+        "ignoreSavedLayout": true,
+        "details": {
+          "url": "https://www.tradingview.com/#stocks",
+          "mode": "flat",
+          "startLocation": "center",
+          "width": 1086,
+          "height": 660,
+          "minWidth": 1086,
+          "minHeight": 630
+        },
+        "customProperties": {
+          "includeInWorkspaces": true
+        }
+      },
+      {
+        "name": "public-finance",
+        "title": "Finance",
+        "caption": "Finance",
+        "type": "window",
+        "ignoreSavedLayout": true,
+        "details": {
+          "url": "https://publicfinance.oecd.org/",
+          "mode": "flat",
+          "startLocation": "center",
+          "width": 1086,
+          "height": 660,
+          "minWidth": 1086,
+          "minHeight": 630
+        },
+        "customProperties": {
+          "includeInWorkspaces": true
+        }
+      },
+      {
+        "name": "start-of-day",
+        "title": "Start Of Day",
+        "caption": "Start Of Day",
+        "type": "window",
+        "ignoreSavedLayout": true,
+        "details": {
+          "url": "https://start-of-day.glue42.com/",
+          "mode": "flat",
+          "startLocation": "center",
+          "width": 1086,
+          "height": 660,
+          "minWidth": 1086,
+          "minHeight": 630
+        },
+        "customProperties": {
+          "includeInWorkspaces": true
+        }
+      },
+      {
+        "name": "demo-dashboard",
+        "title": "Demo Dashboard",
+        "caption": "Demo Dashboard Example",
+        "type": "window",
+        "ignoreSavedLayout": true,
+        "details": {
+          "url": "http://localhost:3005/demo-dashboard-index.html",
+          "mode": "flat",
+          "startLocation": "center",
+          "width": 1086,
+          "height": 660,
+          "minWidth": 1086,
+          "minHeight": 630
+        },
+        "customProperties": {
+          "includeInWorkspaces": true
+        }
+      },
+      {
+        "name": "Glue42 Core Plus Docs",
+        "type": "window",
+        "title": "Documentation",
+        "details": {
+          "url": "https://core-docs.glue42.com/getting-started/what-is-glue42-core-plus/index.html"
+        },
+        "customProperties": {
+          "includeInWorkspaces": true
+        }
+      },
+      {
+        "name": "interop-viewer",
+        "type": "window",
+        "title": "Interop Viewer",
+        "details": {
+          "url": "https://devtools.glue42.com/js-interop-viewer/index.html"
+        },
+        "customProperties": {
+          "includeInWorkspaces": true
+        }
+      },
+      {
+        "name": "StreamSubscription",
+        "type": "window",
+        "title": "StreamSubscription",
+        "details": {
+          "url": "https://devtools.glue42.com/js-interop-viewer/index.html#/stream-subscription"
+        },
+        "hidden": true
+      },
+      {
+        "name": "InvokeMethod",
+        "type": "window",
+        "title": "InvokeMethod",
+        "details": {
+          "url": "https://devtools.glue42.com/js-interop-viewer/index.html#/invoke-method"
+        },
+        "hidden": true
+      },
+      {
+        "name": "context-viewer",
+        "type": "window",
+        "title": "Context Viewer",
+        "details": {
+          "url": "https://devtools.glue42.com/js-context-viewer/index.html"
+        },
+        "customProperties": {
+          "includeInWorkspaces": true
+        }
+      },
+      {
+        "name": "intentsResolver",
+        "type": "window",
+        "title": "Intents Resolver",
+        "details": {
+          "url": "http://localhost:4221/"
+        },
+        "customProperties": {}
+      }
+    ]
+  },
+  "channels": {
+    "definitions": [
+      {
+        "name": "Red",
+        "meta": {
+          "color": "red",
+          "name": "Red",
+          "fdc3": {
+            "id": "fdc3.channel.1",
+            "displayMetadata": {
+              "name": "Channel 1",
+              "glyph": "1"
+            }
+          }
+        }
+      },
+      {
+        "name": "Green",
+        "meta": {
+          "color": "green",
+          "name": "Green",
+          "fdc3": {
+            "id": "fdc3.channel.4",
+            "displayMetadata": {
+              "name": "Channel 4",
+              "glyph": "4"
+            }
+          }
+        }
+      },
+      {
+        "name": "Blue",
+        "meta": {
+          "color": "#66ABFF",
+          "name": "Blue",
+          "fdc3": {
+            "id": "fdc3.channel.6",
+            "displayMetadata": {
+              "name": "Channel 6",
+              "glyph": "6"
+            }
+          }
+        }
+      },
+      {
+        "name": "Pink",
+        "meta": {
+          "color": "#F328BB",
+          "name": "Pink",
+          "fdc3": {
+            "id": "fdc3.channel.7",
+            "displayMetadata": {
+              "name": "Channel 7",
+              "glyph": "7"
+            }
+          }
+        }
+      },
+      {
+        "name": "Yellow",
+        "meta": {
+          "color": "#FFE733",
+          "name": "Yellow",
+          "fdc3": {
+            "id": "fdc3.channel.3",
+            "displayMetadata": {
+              "name": "Channel 3",
+              "glyph": "3"
+            }
+          }
+        }
+      },
+      {
+        "name": "Dark Yellow",
+        "meta": {
+          "color": "#b09b00",
+          "name": "Dark Yellow"
+        }
+      },
+      {
+        "name": "Orange",
+        "meta": {
+          "color": "#fa5a28",
+          "name": "Orange",
+          "fdc3": {
+            "id": "fdc3.channel.2",
+            "displayMetadata": {
+              "name": "Channel 2",
+              "glyph": "2"
+            }
+          }
+        }
+      },
+      {
+        "name": "Purple",
+        "meta": {
+          "color": "#c873ff",
+          "name": "Purple",
+          "fdc3": {
+            "id": "fdc3.channel.8",
+            "displayMetadata": {
+              "name": "Channel 8",
+              "glyph": "8"
+            }
+          }
+        }
+      },
+      {
+        "name": "Lime",
+        "meta": {
+          "color": "#8af59e",
+          "name": "Lime"
+        }
+      },
+      {
+        "name": "Cyan",
+        "meta": {
+          "color": "#80f3ff",
+          "name": "Cyan",
+          "fdc3": {
+            "id": "fdc3.channel.5",
+            "displayMetadata": {
+              "name": "Channel 5",
+              "glyph": "5"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

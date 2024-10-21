@@ -1,0 +1,124 @@
+:root {
+    --avatar-small: 2rem;
+    --avatar-large: 3rem;
+    --avatar-extra-large: 4rem;
+    --icon-sm: 1em;
+    --icon-lg: 1.333333333333333em;
+    --icon-xl: 1.5em;
+    --icon-xxl: 2em;
+    --window-size: calc(100% - 1px);
+    --owx-font-family: system-ui;
+    --owx-line-height: 1.5;
+    --owx-menu-width: 18.7rem;
+    --owx-menu-logo-width: 8.333333333333333rem;
+    --owx-popup-width: 21.4rem;
+    --owx-modal-small: 25rem;
+    --owx-modal-medium: 41.5rem;
+    --owx-search-error-width: 16rem;
+    --owx-overlay-bg-color: white;
+    --owx-overlay-bg-opacity: 0.01;
+    --owx-sub-tab-height: 2.5rem;
+    --owx-search-max-width: 337px;
+    --spacing-3: 3px;
+}
+
+[data-bs-density="compact"] {
+    --owx-font-size: 12px;
+}
+
+[data-bs-density="cozy"] {
+    --owx-font-size: 14px;
+}
+
+[data-bs-density="roomy"] {
+    --owx-font-size: 16px;
+}
+
+[data-bs-theme="dark"] {
+    --owx-bg-00: var(--green-900);
+    --owx-bg-01: var(--neutral-50);
+    --owx-bg-02: var(--green-800);
+    --owx-bg-03: var(--neutral-200);
+    --owx-bg-04: var(--green-950);
+    --owx-hover-bg-01: var(--neutral-100);
+    --owx-hover-bg-02: var(--green-800);
+    --owx-hover-bg-03: var(--neutral-100);
+    --owx-hover-bg-04: var(--green-800);
+    --owx-hover-bg-05: var(--red-600);
+    --owx-border-01: var(--green-300);
+    --owx-border-02: var(--neutral-300);
+    --owx-border-04: var(--neutral-300);
+    --owx-border-05: var(--neutral-400);
+    --owx-label-primary: var(--white);
+    --owx-label-secondary: var(--green-300);
+    --owx-label-tertiary: var(--white);
+    --owx-helper-text: var(--neutral-600);
+    --owx-menu-shadow: 12px 0px 24px 0px rgba(0, 0, 0, 0.25);
+    --owx-submenu-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.12);
+    --owx-toast-shadow: var(--elevation-300);
+    --owx-tab-flash-bg: var(--orange-600);
+    --owx-sub-tabs-separator: #403F3E;
+    --owx-splitter-color: var(--neutral-50);
+    --owx-drag-handle-color: var(--neutral-50);
+    --owx-category-color: var(--green-300);
+    --owx-sub-category-color: var(--white);
+    --owx-menu-color: var(--white);
+    --owx-header-color: var(--green-700);
+    --owx-group-header-color: var(--neutral-50);
+    --owx-icon-color-00: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(241deg) brightness(103%) contrast(103%);
+    --owx-icon-color-01: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(214deg) brightness(104%) contrast(101%);
+    --owx-icon-color-02: brightness(0) saturate(100%) invert(83%) sepia(39%) saturate(493%) hue-rotate(55deg) brightness(90%) contrast(90%);
+    --owx-icon-color-03: brightness(0) saturate(100%) invert(42%) sepia(19%) saturate(1769%) hue-rotate(64deg) brightness(97%) contrast(85%);
+    --owx-icon-color-04: brightness(0) saturate(100%) invert(17%) sepia(65%) saturate(3186%) hue-rotate(346deg) brightness(87%) contrast(105%);
+    --owx-icon-color-05: brightness(0) saturate(100%) invert(45%) sepia(19%) saturate(3507%) hue-rotate(191deg) brightness(97%) contrast(97%);
+    --owx-icon-color-06: brightness(0) saturate(100%) invert(38%) sepia(45%) saturate(7238%) hue-rotate(341deg) brightness(80%) contrast(125%);
+    --owx-icon-color-07: brightness(0) saturate(100%) invert(11%) sepia(97%) saturate(4639%) hue-rotate(357deg) brightness(78%) contrast(90%);
+}
+
+[data-bs-theme=dark] .navbar {
+    --form-bg: var(--green-800);
+    --form-color: var(--white);
+    --form-placeholder-opacity: 0.7;
+}
+
+[data-bs-theme="light"] {
+    --owx-bg-00: var(--green-900);
+    --owx-bg-01: var(--white);
+    --owx-bg-02: var(--green-950);
+    --owx-bg-03: var(--orange-50);
+    --owx-bg-04: var(--green-50);
+    --owx-hover-bg-01: var(--neutral-50);
+    --owx-hover-bg-02: var(--green-800);
+    --owx-hover-bg-03: var(--neutral-100);
+    --owx-hover-bg-04: var(--green-950);
+    --owx-hover-bg-05: var(--red-600);
+    --owx-border-01: var(--green-700);
+    --owx-border-02: var(--neutral-300);
+    --owx-border-03: var(--white);
+    --owx-border-04: var(--neutral-600);
+    --owx-border-05: var(--neutral-950);
+    --owx-label-primary: var(--white);
+    --owx-label-secondary: var(--green-600);
+    --owx-label-tertiary: var(--neutral-950);
+    --owx-helper-text: var(--neutral-600);
+    --owx-menu-shadow: 12px 0px 24px 0px rgba(0, 0, 0, 0.25);
+    --owx-submenu-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.12);
+    --owx-toast-shadow: var(--elevation-300);
+    --owx-tab-flash-bg: var(--orange-600);
+    --owx-sub-tabs-separator: var(--neutral-100);
+    --owx-splitter-color: var(--owx-bg-01);
+    --owx-drag-handle-color: var(--green-900);
+    --owx-category-color: var(--green-600);
+    --owx-sub-category-color: var(--neutral-900);
+    --owx-menu-color: var(--body-color);
+    --owx-header-color: var(--green-900);
+    --owx-group-header-color: var(--white);
+    --owx-icon-color-00: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(241deg) brightness(103%) contrast(103%);
+    --owx-icon-color-01: brightness(0) saturate(100%) invert(0%) sepia(3%) saturate(186%) hue-rotate(319deg) brightness(106%) contrast(93%);
+    --owx-icon-color-02: brightness(0) saturate(100%) invert(36%) sepia(96%) saturate(378%) hue-rotate(64deg) brightness(98%) contrast(90%);
+    --owx-icon-color-03: brightness(0) saturate(100%) invert(42%) sepia(19%) saturate(1769%) hue-rotate(64deg) brightness(97%) contrast(85%);
+    --owx-icon-color-04: brightness(0) saturate(100%) invert(17%) sepia(65%) saturate(3186%) hue-rotate(346deg) brightness(87%) contrast(105%);
+    --owx-icon-color-05: brightness(0) saturate(100%) invert(17%) sepia(18%) saturate(6989%) hue-rotate(212deg) brightness(103%) contrast(95%);
+    --owx-icon-color-06: brightness(0) saturate(100%) invert(19%) sepia(90%) saturate(1012%) hue-rotate(350deg) brightness(99%) contrast(96%);
+    --owx-icon-color-07: brightness(0) saturate(100%) invert(11%) sepia(97%) saturate(4639%) hue-rotate(357deg) brightness(78%) contrast(90%);
+}

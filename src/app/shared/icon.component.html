@@ -1,0 +1,15 @@
+<div *ngIf="!!this.icon"
+     [class]="'icon-container align-self-center ' + this.className"
+     [class.pointer]="this.actionable"
+     [style]="this.style"
+     [attr.role]="this.actionable ? 'button' : undefined"
+     [a11yAction]="this.onClick.emit"
+     [a11yTitle]="this.title">
+
+  <img [ngClass]="['d-block', 'icon' , 'icon-color-' + this.color, 'icon-' + this.size, this.iconClassName]"
+       [style]="this.style"
+       [assetPath]="'icons/icon-' + this.icon + '.svg'"
+       alt="" />
+</div>
+
+<div *ngIf="!this.icon" [ngClass]="['icon-' + this.size, this.className]" [style]="this.style"></div>

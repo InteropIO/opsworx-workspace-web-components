@@ -1,0 +1,50 @@
+.menu {
+    width: var(--owx-menu-width);
+    color: var(--owx-menu-color);
+    background-color: var(--body-bg);
+}
+
+.menu-button-logo {
+    width: var(--owx-menu-logo-width);
+}
+
+.menu-env-indicator {
+    font-size: 0.833333333333333rem;
+    font-weight: 700;
+    opacity: 0.5;
+    margin-top: 0.416667rem;
+}
+
+.menu-wrapper {
+    &:not(.pinned) .menu {
+        box-shadow: var(--owx-menu-shadow);
+    }
+}
+
+.menu-layouts-list {
+    .menu-layout-item:not(:hover):not(:focus):not(:focus-within) {
+        .layout-action-icons {
+            display: none !important;
+        }
+    }
+}
+
+.replace-layout-modal-body {
+    margin-top: 17rem;
+}
+
+.submenu-shadow {
+    box-shadow: var(--owx-submenu-shadow);
+}
+
+.menu-category-title {
+    color: var(--owx-category-color);
+    text-transform: uppercase;
+}
+
+.menu-sub-category-title {
+    color: var(--owx-sub-category-color);
+    text-transform: uppercase;
+    opacity: 0.7;
+    font-size: 0.91rem;
+}

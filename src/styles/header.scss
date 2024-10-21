@@ -1,0 +1,39 @@
+.owx-header {
+    // align-items: center breaks the custom move area
+    align-items: normal;
+    background-color: var(--owx-header-color);
+    --form-border-color-hover: var(--green-600);
+}
+
+.search-container {
+    max-width: var(--owx-search-max-width);
+    width: 100%;
+}
+
+.custom-move-area-container {
+    min-width: 2rem;
+}
+
+[data-bs-density="compact"] {
+    @media only screen and (max-width: 900px) {
+        .header-user-name {
+            display: none;
+        }
+    }
+}
+
+[data-bs-density="cozy"] {
+    @media only screen and (max-width: 1050px) {
+        .header-user-name {
+            display: none;
+        }
+    }
+}
+
+[data-bs-density="roomy"] {
+    @media only screen and (max-width: 1200px) {
+        .header-user-name {
+            display: none;
+        }
+    }
+}

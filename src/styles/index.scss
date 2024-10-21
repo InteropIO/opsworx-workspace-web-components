@@ -1,1 +1,58 @@
 @import "@interopio/workspaces-ui-web-components/dist/styles/workspaces.css";
+
+// @import "bootstrap/scss/functions";
+// @import "bootstrap/scss/variables";
+// @import "bootstrap/scss/variables-dark";
+// @import "bootstrap/scss/maps";
+// @import "bootstrap/scss/mixins";
+// @import "bootstrap/scss/utilities";
+// @import "bootstrap/scss/helpers";
+// @import "bootstrap/scss/utilities/api";
+@import "bootstrap/scss/bootstrap-utilities.scss";
+// @import "bootstrap-icons/font/bootstrap-icons.scss";
+
+@import "frame.css";
+@import "variables.css";
+
+@import "common.scss";
+@import "spacing-utils.scss";
+@import "custom-popup.scss";
+@import "design-system-utils.scss";
+@import "header.scss";
+@import "menu.scss";
+@import "search-input.scss";
+@import "toast.scss";
+@import "workspace.scss";
+
+// .lm_dragProxy .lm_content {
+//   display: none;
+// }
+
+:root {
+  font-size: var(--owx-font-size);
+}
+
+body {
+  color: var(--owx-label-tertiary);
+  font-size: var(--owx-font-size);
+  font-family: var(--owx-font-family);
+  line-height: var(--owx-line-height);
+  background-color: var(--body-bg);
+}
+
+#root {
+  border-color: var(--owx-bg-00);
+  color: var(--owx-label-primary);
+}
+
+#webpack-dev-server-client-overlay {
+  display: none;
+}
+
+.quick-view-container {
+  inset: 0;
+
+  &.quick-view-pinned-menu {
+    margin-left: var(--owx-menu-width);
+  }
+}

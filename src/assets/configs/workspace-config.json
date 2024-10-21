@@ -1,0 +1,23 @@
+{
+    "categories": [
+        {
+            "name": "Tasks",
+            "icon": "bulleted-list",
+            "subCategories": [
+                {
+                    "name": "Mutual fund breaks"
+                },
+                {
+                    "name": "Corporate actions"
+                }
+            ]
+        },
+        {
+            "name": "Inquiry",
+            "icon": "drawer-opened"
+        }
+    ],
+    "version": "1.0",
+    "dashboardAppName": "Dashboard",
+    "allowWorkspaceDefinitionChanges": true
+}

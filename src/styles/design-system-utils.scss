@@ -1,0 +1,119 @@
+@for $i from 0 through 4 {
+    .bg-color-0#{$i} {
+        background-color: var(--owx-bg-0#{$i});
+    }
+}
+
+@for $i from 0 through 5 {
+    .target-bg-#{$i} {
+        &:hover,
+        &:focus,
+        &:focus-within {
+            background-color: var(--owx-hover-bg-0#{$i}) !important;
+        }
+    }
+}
+
+.color-primary {
+    color: var(--owx-label-primary) !important;
+}
+
+.color-secondary {
+    color: var(--owx-label-secondary) !important;
+}
+
+.color-tertiary {
+    color: var(--owx-label-tertiary) !important;
+}
+
+.helper-text {
+    color: var(--owx-helper-text) !important;
+}
+
+.overlay-background {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--owx-overlay-bg-color);
+    opacity: var(--owx-overlay-bg-opacity);
+}
+
+.modal-small {
+    width: var(--owx-modal-small);
+}
+
+.modal-medium {
+    width: var(--owx-modal-medium);
+}
+
+.avatar-small {
+    height: var(--avatar-small);
+    width: var(--avatar-small);
+}
+
+.avatar-large {
+    height: var(--avatar-large);
+    width: var(--avatar-large);
+}
+
+.avatar-extra-large {
+    height: var(--avatar-extra-large);
+    width: var(--avatar-extra-large);
+}
+
+.icon-sm {
+    height: var(--icon-sm);
+    width: var(--icon-sm);
+    min-width: var(--icon-sm);
+}
+
+.icon-lg {
+    height: var(--icon-lg);
+    width: var(--icon-lg);
+}
+
+.icon-xl {
+    height: var(--icon-xl);
+    width: var(--icon-xl);
+}
+
+.icon-xxl {
+    height: var(--icon-xxl);
+    width: var(--icon-xxl);
+}
+
+@for $i from 0 through 7 {
+    .icon-color-#{$i} {
+        filter: var(--owx-icon-color-0#{$i});
+    }
+}
+
+@for $i from 1 through 5 {
+    .border-0#{$i} {
+        border: var(--spacing-1) solid var(--owx-border-0#{$i});
+    }
+
+    .border-bottom-0#{$i} {
+        border-bottom: var(--spacing-1) solid var(--owx-border-0#{$i});
+    }
+
+    .border-top-0#{$i} {
+        border-top: var(--spacing-1) solid var(--owx-border-0#{$i});
+    }
+
+    .border-right-0#{$i} {
+        border-right: var(--spacing-1) solid var(--owx-border-0#{$i});
+    }
+
+    .border-left-0#{$i} {
+        border-left: var(--spacing-1) solid var(--owx-border-0#{$i});
+    }
+}
+
+@for $i from 0 through 4 {
+    .border-width-#{$i} {
+        border-width: var(--spacing-#{$i});
+    }
+}
