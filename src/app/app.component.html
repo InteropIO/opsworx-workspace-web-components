@@ -1,3 +1,9 @@
-<main class="main" style="height: 100%; width: 100%">
-  <workspaces-element [components]="this.components"></workspaces-element>
-</main>
+<div class='d-flex flex-grow-1 min-width-0 position-relative'>
+  <app-menu></app-menu>
+
+  <div class="d-flex flex-column flex-grow-1 min-width-0" [class.hide-dev-controls]="!(this.allowWorkspaceDefinitionChanges$ | async)">
+    <app-header></app-header>
+
+    <workspaces-element [components]="this.components"></workspaces-element>
+  </div>
+</div>

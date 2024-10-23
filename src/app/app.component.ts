@@ -1,12 +1,23 @@
-import { Component, NO_ERRORS_SCHEMA } from '@angular/core';
+import { Component, NO_ERRORS_SCHEMA, reflectComponentType } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
+import { map } from 'rxjs';
+
+import { CustomComponents } from '@interopio/workspaces-ui-web-components/dist/types/api';
+
+import { AddApplicationPopup, WorkspaceTab, WorkspaceWindowTab } from '@interopio/workspaces-ui-web-components';
+import { AddWorkspaceComponent } from './components/workspace-components/add-workspace/add-workspace.component';
 import { Environment } from './utilities/environment.utils';
+import { GroupHeaderButtonsComponent } from './components/workspace-components/group-header-buttons/group-header-buttons.component';
 import { ILayout } from './models/layout.model';
 import { IOService } from './services/io.service';
 import { IWorkspaceMetadata } from './models/workspace-metadata.model';
+import { LogoComponent } from './components/workspace-components/logo.component';
+import { MenuComponent } from './components/menu/menu.component';
 import { MenuService } from './services/menu.service';
 import { PendoHelper } from './utilities/pendo-helper.utils';
 import { Shortcuts } from './utilities/shortcuts.utils';
+import { SystemButtonsComponent } from './components/workspace-components/system-buttons.component';
 import { UserService } from './services/user.service';
 import { WorkspaceConfigService } from './services/workspace-config.service';
 
@@ -14,14 +25,28 @@ import { WorkspaceConfigService } from './services/workspace-config.service';
   selector: 'app-root',
   standalone: true,
   templateUrl: './app.component.html',
+  imports: [MenuComponent, CommonModule],
   schemas: [NO_ERRORS_SCHEMA]
 })
 export class AppComponent {
-  components = {
+  components: CustomComponents = {
     header: {
-      logo: 'app-custom-logo',
+      logo: reflectComponentType(LogoComponent)?.selector,
+      addWorkspace: reflectComponentType(AddWorkspaceComponent)?.selector,
+      workspaceTab: reflectComponentType(WorkspaceTab)?.selector,
+      systemButtons: reflectComponentType(SystemButtonsComponent)?.selector,
+    },
+    popups: {
+      addApplication: reflectComponentType(AddApplicationPopup)?.selector,
+      addWorkspace: reflectComponentType(AddWorkspaceComponent)?.selector,
+    },
+    groupHeader: {
+      workspaceWindowTab: reflectComponentType(WorkspaceWindowTab)?.selector,
+      buttons: reflectComponentType(GroupHeaderButtonsComponent)?.selector
     }
   }
+
+  public allowWorkspaceDefinitionChanges$ = this.workspaceConfigService.config$.pipe(map((config) => config?.allowWorkspaceDefinitionChanges || false));
 
   constructor(
     private readonly ioService: IOService,
@@ -34,6 +59,8 @@ export class AppComponent {
     this.openDefaultWorkspace();
     this.registerPendo();
     Shortcuts.registerShortcuts(this.ioService);
+
+    this.workspaceConfigService.config
 
   }
 

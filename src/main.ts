@@ -11,10 +11,17 @@ import IODesktop, { IOConnectDesktop } from '@interopio/desktop';
 import IOSearch from '@interopio/search-api';
 import IOWorkspaces from '@interopio/workspaces-api';
 
+import { AddApplicationPopupComponent } from './app/components/workspace-components/add-application-popup/add-application-popup.component';
+import { AddWorkspaceComponent } from './app/components/workspace-components/add-workspace/add-workspace.component'
+import { AddWorkspacePopupComponent } from './app/components/workspace-components/add-workspace-popup/add-workspace-popup.component'
 import { AppComponent } from './app/app.component';
 import { AssetPathDirective } from './app/directives/asset-path.directive';
-import { CustomLogoComponent } from './app/components/workspace-components/custom-logo/custom-logo.component';
+import { GroupHeaderButtonsComponent } from './app/components/workspace-components/group-header-buttons/group-header-buttons.component';
 import { IWorkspaceConfig, WorkspaceConfigName } from './app/models/wokrpsace-config.model';
+import { LogoComponent } from './app/components/workspace-components/logo.component';
+import { SystemButtonsComponent } from './app/components/workspace-components/system-buttons.component';
+import { WindowTabComponent } from './app/components/workspace-components/window-tab/window-tab.component';
+import { WorkspaceTabComponent } from './app/components/workspace-components/workspace-tab/workspace-tab.component'
 
 const bootstrap = async (ioPlatform?: IOConnectBrowser.API, pathToAssets?: string, workspaceConfigOverride?: IWorkspaceConfig) => {
   const workspaceConfigPath = AssetPathDirective.composePathToAssets('configs/workspace-config.json', pathToAssets);
@@ -80,7 +87,7 @@ if (window.isPlatformApplication) {
 }
 
 function registerWebComponents(app: ApplicationRef) {
-  const webComponents = [CustomLogoComponent];
+  const webComponents = [AddApplicationPopupComponent, AddWorkspaceComponent, AddWorkspacePopupComponent, GroupHeaderButtonsComponent, WindowTabComponent, WorkspaceTabComponent, LogoComponent, SystemButtonsComponent];
 
   webComponents.forEach((webComponent) => {
     const webElement = createCustomElement(webComponent, { injector: app.injector });
