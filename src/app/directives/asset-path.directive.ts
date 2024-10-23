@@ -1,4 +1,4 @@
-import { Directive, ElementRef, Input } from '@angular/core';
+import { Directive, ElementRef, Inject, Input } from '@angular/core';
 
 @Directive({
     selector: '[assetPath]',
@@ -7,19 +7,22 @@ import { Directive, ElementRef, Input } from '@angular/core';
 export class AssetPathDirective {
 
     public static composePathToAssets = (path: string, pathToAssets: string | undefined) => {
+        // TODO: test out paths in both io.CD and io.CB
         if (!window.isPlatformApplication) {
             return './assets/' + path;
         }
 
         const pathWithoutStartingSlash = path.startsWith('/') ? path.slice(1) : path;
-        const combinedPath = pathToAssets + pathWithoutStartingSlash;
-        return './assets/' + combinedPath;
+        const combinedPath = pathToAssets + '/assets/' + pathWithoutStartingSlash;
+        return combinedPath;
     }
 
-    constructor(public element: ElementRef<HTMLImageElement>) { }
+    constructor(
+        public element: ElementRef<HTMLImageElement>,
+        @Inject('pathToAssets') public pathToAssets: string,
+    ) { }
 
     @Input() set assetPath(value: string) {
-        // TODO: actual path to assets from service
-        this.element.nativeElement.src = AssetPathDirective.composePathToAssets(value, '');
+        this.element.nativeElement.src = AssetPathDirective.composePathToAssets(value, this.pathToAssets);
     }
 }

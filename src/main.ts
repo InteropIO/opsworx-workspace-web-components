@@ -12,18 +12,20 @@ import IOSearch from '@interopio/search-api';
 import IOWorkspaces from '@interopio/workspaces-api';
 
 import { AppComponent } from './app/app.component';
-import { CustomLogoComponent } from './app/components/custom-logo/custom-logo.component';
-import { IWorkspaceConfig, WorkspaceConfigName } from './app/models/wokrpsace-config.model';
 import { AssetPathDirective } from './app/directives/asset-path.directive';
+import { CustomLogoComponent } from './app/components/workspace-components/custom-logo/custom-logo.component';
+import { IWorkspaceConfig, WorkspaceConfigName } from './app/models/wokrpsace-config.model';
 
 const bootstrap = async (ioPlatform?: IOConnectBrowser.API, pathToAssets?: string, workspaceConfigOverride?: IWorkspaceConfig) => {
   const workspaceConfigPath = AssetPathDirective.composePathToAssets('configs/workspace-config.json', pathToAssets);
   const workspaceConfig = workspaceConfigOverride ? workspaceConfigOverride : await (await fetch(workspaceConfigPath)).json();
 
-  console.info('Workspace application version: 1.3.4');
+  console.info('Workspace angular application version: 1.0.0');
 
   const appConfig: ApplicationConfig = {
     providers: [
+      { provide: 'workspaceConfig', useValue: workspaceConfig },
+      { provide: 'pathToAssets', useValue: pathToAssets },
       importProvidersFrom(
         IOConnectNg.forRoot({
           holdInit: true,
