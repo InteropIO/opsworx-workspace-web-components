@@ -1,0 +1,9 @@
+<div class='mb-3 mt-auto z-1 user-select-none'>
+    <ng-container *ngIf="!features?.hideThemeControls">
+        <app-menu-theme-setting></app-menu-theme-setting>
+    </ng-container>
+
+    <ng-container *ngIf="!features?.hideLayoutControls">
+        <app-menu-layout-setting></app-menu-layout-setting>
+    </ng-container>
+</div>

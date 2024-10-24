@@ -15,7 +15,7 @@ import { MenuWorkspacesListComponent } from './menu-workspaces-list.component';
           <div class='d-flex mb-2 pt-2'>
               <app-icon class="px-3"></app-icon>
 
-              <div class='menu-sub-category-title mx-3 fw-semibold'>{{subCategory.name}}</div>
+              <div class='menu-sub-category-title fw-semibold'>{{subCategory.name}}</div>
           </div>
       </ng-container>
 

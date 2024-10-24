@@ -20,6 +20,7 @@ export interface IFeaturesConfig {
     hideMaximizeButton?: boolean;
     hideCloseButton?: boolean;
     hideThemeControls?: boolean;
+    hideLayoutControls?: boolean;
     hideEnvIndicator?: boolean;
 }
 

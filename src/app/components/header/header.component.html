@@ -32,19 +32,19 @@
         </ng-container>
 
         <ng-container *ngIf="!features?.hideMinimizeButton">
-            <app-icon className="py-4 px-3 target-bg-4" id="minimizeIcon" icon="minimize" size="sm" title="Minimize" [actionable]="true" (onClick)="this.myFrame?.minimize()">
+            <app-icon class="py-4 px-3 target-bg-4" id="minimizeIcon" icon="minimize" size="sm" title="Minimize" [actionable]="true" (onClick)="this.myFrame?.minimize()">
             </app-icon>
         </ng-container>
         <ng-container *ngIf="!features?.hideMaximizeButton && this.frameState === 'normal'">
-            <app-icon className="py-4 px-3 target-bg-4" id="maximizeIcon" icon="maximize" size="sm" title="Maximize" [actionable]="true" (onClick)="this.myFrame?.maximize()">
+            <app-icon class="py-4 px-3 target-bg-4" id="maximizeIcon" icon="maximize" size="sm" title="Maximize" [actionable]="true" (onClick)="this.myFrame?.maximize()">
             </app-icon>
         </ng-container>
         <ng-container *ngIf="!features?.hideMaximizeButton  && this.frameState === 'maximized'">
-            <app-icon className="py-4 px-3 target-bg-4" id="restoreDownIcon" icon="restore-down" size="sm" title="Restore down" [actionable]="true" (onClick)="this.myFrame?.restore()">
+            <app-icon class="py-4 px-3 target-bg-4" id="restoreDownIcon" icon="restore-down" size="sm" title="Restore down" [actionable]="true" (onClick)="this.myFrame?.restore()">
             </app-icon>
         </ng-container>
         <ng-container *ngIf="!features?.hideCloseButton">
-            <app-icon className="py-4 px-3 target-bg-5" id="closeFrameIcon" icon="close" size="sm" title="Title" [actionable]="true" (onClick)="this.requestFrameClose()">
+            <app-icon class="py-4 px-3 target-bg-5" id="closeFrameIcon" icon="close" size="sm" title="Title" [actionable]="true" (onClick)="this.requestFrameClose()">
             </app-icon>
         </ng-container>
     </div>
