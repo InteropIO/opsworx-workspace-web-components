@@ -40,6 +40,10 @@ export class MenuService {
     return this._isMenuPinned$.asObservable();
   }
 
+  public get hasEnoughSpaceToPin$() {
+    return this._hasEnoughSpaceToPin$.asObservable();
+  }
+
   public showMenu() {
     this._showMenu$.next(true);
   }
@@ -54,6 +58,10 @@ export class MenuService {
 
   public forceHideMenu() {
     this._showMenu$.next(false);
+  }
+
+  public toggleMenuPinned() {
+    this._isMenuPinnedByUser$.next(!this._isMenuPinnedByUser$.value);
   }
 
   /**

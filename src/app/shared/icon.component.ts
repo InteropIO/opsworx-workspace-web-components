@@ -1,10 +1,10 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
 import { A11yActionDirective } from '../directives/a11y-action.directive';
 import { A11yTitleDirective } from '../directives/a11y-title.directive';
-import { CommonModule } from '@angular/common';
-import { AnimationStyleMetadata } from '@angular/animations';
-import { IIcon } from '../models/icon.model';
 import { AssetPathDirective } from '../directives/asset-path.directive';
+import { IIcon } from '../models/icon.model';
 
 @Component({
   selector: 'app-icon',

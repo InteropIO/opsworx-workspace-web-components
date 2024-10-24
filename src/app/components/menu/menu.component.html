@@ -1,1 +1,10 @@
-<div> menu</div>
+<div class="menu-wrapper h-100 border-right-02" [ngClass]="[isMenuPinned ? 'pinned' : 'position-absolute', showMenu ? 'd-flex' : 'd-none']">
+    <div class='menu d-flex flex-column h-100 z-24'>
+        <app-menu-header></app-menu-header>
+        <app-menu-navigation></app-menu-navigation>
+    </div>
+
+    <ng-container *ngIf="!this.isMenuPinned">
+        <div class='flex-grow-1 overlay-background z-22' (click)="this.forceHideMenu()"></div>
+    </ng-container>
+</div>

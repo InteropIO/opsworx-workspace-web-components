@@ -1,0 +1,10 @@
+<div class='d-flex jc-center user-select-none'>
+    <app-menu-button [isCloseMenuButton]="true"></app-menu-button>
+
+    <div class='ms-auto pt-4 pe-3'>
+        <ng-container *ngIf="this.hasEnoughSpaceToPin">
+            <app-icon [id]="this.id" [icon]="this.icon" [color]="1" [title]="this.title" [actionable]="true" (onClick)="this.togglePinned($event)">
+            </app-icon>
+        </ng-container>
+    </div>
+  </div>

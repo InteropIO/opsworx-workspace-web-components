@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { IOConnectWorkspaces } from '@interopio/workspaces-api';
 
+import { AvatarComponent } from '../../shared/avatar.component';
 import { CustomMoveAreaComponent } from '../common/custom-move-area.component';
 import { IconComponent } from '../../shared/icon.component';
 import { IOService } from '../../services/io.service';
@@ -15,7 +16,7 @@ import { WorkspaceConfigService } from '../../services/workspace-config.service'
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, MenuButtonComponent, CustomMoveAreaComponent, SearchContainerComponent, IconComponent],
+  imports: [CommonModule, MenuButtonComponent, CustomMoveAreaComponent, SearchContainerComponent, IconComponent, AvatarComponent],
   templateUrl: './header.component.html',
 })
 export class HeaderComponent {

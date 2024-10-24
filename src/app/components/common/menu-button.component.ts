@@ -1,13 +1,12 @@
 import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
-import { MenuService } from '../../services/menu.service';
-import { AssetPathDirective } from '../../directives/asset-path.directive';
 import { A11yActionDirective } from '../../directives/a11y-action.directive';
+import { AssetPathDirective } from '../../directives/asset-path.directive';
 import { IconComponent } from '../../shared/icon.component';
 import { IIcon } from '../../models/icon.model';
-import { Environment } from '../../utilities/environment.utils';
+import { MenuService } from '../../services/menu.service';
 import { WorkspaceConfigService } from '../../services/workspace-config.service';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-menu-button',
@@ -16,15 +15,15 @@ import { CommonModule } from '@angular/common';
   templateUrl: './menu-button.component.html',
 })
 export class MenuButtonComponent {
-  @Input() public isCloseMenuButton: boolean = false;
-
-  public logo = this.isCloseMenuButton ? 'OpsWorX-logo-menu.svg' : 'OpsWorX.svg'
-  public icon: IIcon = this.isCloseMenuButton ? 'close' : 'menu';
-  public iconColor: 0 | 1 = this.isCloseMenuButton ? 1 : 0;
-  public id = this.isCloseMenuButton ? 'closeMenuButton' : 'openMenuButton';
+  public logo = 'OpsWorX.svg'
+  public icon: IIcon = 'menu';
+  public iconColor: 0 | 1 = 0;
+  public id = 'openMenuButton';
 
   public env = window.iodesktop?.env?.env;
   public showEnvIndicator = false;
+
+  private _isCloseMenuButton: boolean = false;
 
   constructor(
     private readonly menuService: MenuService,
@@ -39,8 +38,17 @@ export class MenuButtonComponent {
     });
   }
 
-  public onClick = () => {
-    if (this.isCloseMenuButton) {
+  @Input() set isCloseMenuButton(isCloseMenuButton: boolean) {
+    this._isCloseMenuButton = isCloseMenuButton;
+
+    this.logo = isCloseMenuButton ? 'OpsWorX-logo-menu.svg' : 'OpsWorX.svg'
+    this.icon = isCloseMenuButton ? 'close' : 'menu';
+    this.iconColor = isCloseMenuButton ? 1 : 0;
+    this.id = isCloseMenuButton ? 'closeMenuButton' : 'openMenuButton';
+  }
+
+  public onClick() {
+    if (this._isCloseMenuButton) {
       this.menuService.forceHideMenu();
     } else {
       this.menuService.showMenu();

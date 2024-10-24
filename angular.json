@@ -26,6 +26,11 @@
             },
             "tsConfig": "tsconfig.app.json",
             "assets": [
+              {
+                "glob": "**/*",
+                "input": "./node_modules/@fmr-ap167218/frame-components-library/src/assets/icons",
+                "output": "/assets/"
+              },
               "src/favicon.ico",
               "src/assets"
             ],
@@ -85,6 +90,11 @@
             ],
             "tsConfig": "tsconfig.spec.json",
             "assets": [
+              {
+                "glob": "**/*",
+                "input": "./node_modules/@fmr-ap167218/frame-components-library/src/assets/icons",
+                "output": "/assets/"
+              },
               "src/favicon.ico",
               "src/assets"
             ],

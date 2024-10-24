@@ -13,18 +13,22 @@
 
     <div class='d-flex ai-center'>
         <ng-container *ngIf="!features?.hideNotificationsButton">
-            <app-icon id="notificationsIcon" icon="alert" size="sm" title="Notifications" [actionable]="true"
-                      (onClick)="this.showNotifications()">
-            </app-icon>
+            <app-avatar class="me-4">
+                <app-icon id="notificationsIcon" icon="alert" size="sm" title="Notifications" [actionable]="true"
+                          (onClick)="this.showNotifications()">
+                </app-icon>
+            </app-avatar>
         </ng-container>
 
         <ng-container *ngIf="!features?.hidePendoButton">
-            <app-icon id="pendoIcon" icon="question-mark" size="sm" title="Learning center" [actionable]="true">
-            </app-icon>
+            <app-avatar class="me-4">
+                <app-icon id="pendoIcon" icon="question-mark" size="sm" title="Learning center" [actionable]="true">
+                </app-icon>
+            </app-avatar>
         </ng-container>
 
         <ng-container *ngIf="!features?.hideUserProfile">
-
+            <!-- TODO -->
         </ng-container>
 
         <ng-container *ngIf="!features?.hideMinimizeButton">
