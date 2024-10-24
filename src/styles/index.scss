@@ -14,6 +14,7 @@
 @import "frame.css";
 @import "variables.css";
 
+@import "angular-component-overrides.scss";
 @import "common.scss";
 @import "spacing-utils.scss";
 @import "custom-popup.scss";
@@ -40,9 +41,13 @@ body {
   background-color: var(--body-bg);
 }
 
-#root {
+app-root {
   border-color: var(--owx-bg-00);
   color: var(--owx-label-primary);
+}
+
+.renderer-mode-transparent {
+  border: 0;
 }
 
 #webpack-dev-server-client-overlay {

@@ -1,1 +1,47 @@
-<div> header</div>
+<div class='owx-header navbar bg-color-00 d-flex justify-content-between user-select-none'>
+    <div class='d-flex'>
+        <ng-container *ngIf="!showMenu || !isMenuPinned">
+            <app-menu-button></app-menu-button>
+        </ng-container>
+    </div>
+
+    <div class='align-items-center d-flex flex-grow-1 header-logo justify-content-center position-relative'>
+        <app-custom-move-area></app-custom-move-area>
+        <app-search-container></app-search-container>
+        <app-custom-move-area></app-custom-move-area>
+    </div>
+
+    <div class='d-flex ai-center'>
+        <ng-container *ngIf="!features?.hideNotificationsButton">
+            <app-icon id="notificationsIcon" icon="alert" size="sm" title="Notifications" [actionable]="true"
+                      (onClick)="this.showNotifications()">
+            </app-icon>
+        </ng-container>
+
+        <ng-container *ngIf="!features?.hidePendoButton">
+            <app-icon id="pendoIcon" icon="question-mark" size="sm" title="Learning center" [actionable]="true">
+            </app-icon>
+        </ng-container>
+
+        <ng-container *ngIf="!features?.hideUserProfile">
+
+        </ng-container>
+
+        <ng-container *ngIf="!features?.hideMinimizeButton">
+            <app-icon className="py-4 px-3 target-bg-4" id="minimizeIcon" icon="minimize" size="sm" title="Minimize" [actionable]="true" (onClick)="this.myFrame?.minimize()">
+            </app-icon>
+        </ng-container>
+        <ng-container *ngIf="!features?.hideMaximizeButton && this.frameState === 'normal'">
+            <app-icon className="py-4 px-3 target-bg-4" id="maximizeIcon" icon="maximize" size="sm" title="Maximize" [actionable]="true" (onClick)="this.myFrame?.maximize()">
+            </app-icon>
+        </ng-container>
+        <ng-container *ngIf="!features?.hideMaximizeButton  && this.frameState === 'maximized'">
+            <app-icon className="py-4 px-3 target-bg-4" id="restoreDownIcon" icon="restore-down" size="sm" title="Restore down" [actionable]="true" (onClick)="this.myFrame?.restore()">
+            </app-icon>
+        </ng-container>
+        <ng-container *ngIf="!features?.hideCloseButton">
+            <app-icon className="py-4 px-3 target-bg-5" id="closeFrameIcon" icon="close" size="sm" title="Title" [actionable]="true" (onClick)="this.requestFrameClose()">
+            </app-icon>
+        </ng-container>
+    </div>
+</div>

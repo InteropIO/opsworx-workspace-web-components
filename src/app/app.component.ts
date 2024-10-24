@@ -1,4 +1,4 @@
-import { Component, NO_ERRORS_SCHEMA, reflectComponentType } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, reflectComponentType } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { map } from 'rxjs';
@@ -9,6 +9,7 @@ import { AddApplicationPopup, WorkspaceTab, WorkspaceWindowTab } from '@interopi
 import { AddWorkspaceComponent } from './components/workspace-components/add-workspace/add-workspace.component';
 import { Environment } from './utilities/environment.utils';
 import { GroupHeaderButtonsComponent } from './components/workspace-components/group-header-buttons/group-header-buttons.component';
+import { HeaderComponent } from './components/header/header.component';
 import { ILayout } from './models/layout.model';
 import { IOService } from './services/io.service';
 import { IWorkspaceMetadata } from './models/workspace-metadata.model';
@@ -25,8 +26,8 @@ import { WorkspaceConfigService } from './services/workspace-config.service';
   selector: 'app-root',
   standalone: true,
   templateUrl: './app.component.html',
-  imports: [MenuComponent, CommonModule],
-  schemas: [NO_ERRORS_SCHEMA]
+  imports: [MenuComponent, CommonModule, HeaderComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppComponent {
   components: CustomComponents = {

@@ -1,0 +1,9 @@
+<div class="d-flex ai-center pointer user-select-none" [id]="this.id" a11yAction (onAction)="this.onClick()">
+    <app-icon class="p-4" [icon]="this.icon" [color]="this.iconColor"></app-icon>
+
+    <img class="menu-button-logo mt-1" alt="Logo" [assetPath]="this.logo" />
+
+    <ng-container *ngIf="this.showEnvIndicator">
+        <span class='ms-2 menu-env-indicator'>{{this.env}}</span>
+    </ng-container>
+</div>

@@ -1,0 +1,7 @@
+<div #moveAreaContainer class='custom-move-area-container h-100 d-flex flex-grow-1 z-23' (mouseover)="this.showMoveArea()">
+    <ng-container *ngIf="this.show">
+        <div class='h-100 w-100'>
+            <workspaces-frame-move-area class='d-block h-100 w-100 custom-move-area'></workspaces-frame-move-area>
+        </div>
+    </ng-container>
+</div>

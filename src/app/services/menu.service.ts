@@ -13,39 +13,47 @@ import { WindowDimensionsService } from './window-dimensions.service';
 export class MenuService {
   public static readonly WorkspaceConfigName = 'WorkspaceConfig';
 
-  public showMenu$ = new BehaviorSubject<boolean>(false);
-  private isMenuPinned$ = new BehaviorSubject<boolean>(false);
+  private _showMenu$ = new BehaviorSubject<boolean>(false);
+  private _isMenuPinned$ = new BehaviorSubject<boolean>(false);
 
-  private isMenuPinnedByUser$ = new BehaviorSubject<boolean>(false);
-  private hasEnoughSpaceToPin$ = new BehaviorSubject<boolean>(true);
+  private _isMenuPinnedByUser$ = new BehaviorSubject<boolean>(false);
+  private _hasEnoughSpaceToPin$ = new BehaviorSubject<boolean>(true);
 
   constructor(
     private readonly appearanceService: AppearanceService,
     private readonly windowDimensionsService: WindowDimensionsService,
   ) {
-    combineLatest([this.isMenuPinnedByUser$, this.hasEnoughSpaceToPin$]).subscribe(([isMenuPinnedByUser, hasEnoughSpaceToPin]) => {
-      this.isMenuPinned$.next(isMenuPinnedByUser && hasEnoughSpaceToPin);
+    combineLatest([this._isMenuPinnedByUser$, this._hasEnoughSpaceToPin$]).subscribe(([isMenuPinnedByUser, hasEnoughSpaceToPin]) => {
+      this._isMenuPinned$.next(isMenuPinnedByUser && hasEnoughSpaceToPin);
     });
 
     combineLatest([this.appearanceService.density$, this.windowDimensionsService.windowDimensions$]).subscribe(([density, windowDimensions]) => {
-      this.hasEnoughSpaceToPin$.next(this.hasEnoughSpaceToPin(density, windowDimensions));
+      this._hasEnoughSpaceToPin$.next(this.hasEnoughSpaceToPin(density, windowDimensions));
     });
   }
 
+  public get showMenu$() {
+    return this._showMenu$.asObservable();
+  }
+
+  public get isMenuPinned$() {
+    return this._isMenuPinned$.asObservable();
+  }
+
   public showMenu() {
-    this.showMenu$.next(true);
+    this._showMenu$.next(true);
   }
 
   public hideMenu() {
-    if (this.isMenuPinnedByUser$.value) {
+    if (this._isMenuPinnedByUser$.value) {
       return;
     }
 
-    this.showMenu$.next(false);
+    this._showMenu$.next(false);
   }
 
   public forceHideMenu() {
-    this.showMenu$.next(false);
+    this._showMenu$.next(false);
   }
 
   /**

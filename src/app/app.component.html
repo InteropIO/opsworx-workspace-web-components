@@ -1,7 +1,7 @@
 <div class='d-flex flex-grow-1 min-width-0 position-relative'>
   <app-menu></app-menu>
 
-  <div class="d-flex flex-column flex-grow-1 min-width-0" [class.hide-dev-controls]="!(this.allowWorkspaceDefinitionChanges$ | async)">
+  <div class="d-flex flex-column flex-grow-1 min-width-0 overflow-hidden" [class.hide-dev-controls]="!(this.allowWorkspaceDefinitionChanges$ | async)">
     <app-header></app-header>
 
     <workspaces-element [components]="this.components"></workspaces-element>
